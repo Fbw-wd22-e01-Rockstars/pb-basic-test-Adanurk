@@ -1,6 +1,6 @@
 // Add answers here 
 
-let nameOfCity = (str) => str.toLowerCase().startsWith("los") || str.toLowerCase().startsWith("new") ? "true" : "The city name does not begin with Los or New";
+let nameOfCity = (str) => str.toLowerCase().startsWith("los") || str.toLowerCase().startsWith("new") ? `${str}` : "The city name does not begin with Los or New";
 
 // console.log(nameOfCity("New York"));
 // console.log(nameOfCity("los angeles"));
@@ -47,7 +47,11 @@ let isRaining = function(bool){
 let geometricalSequence = function(){
     let str = "";
     for (let i = 0; i < 9; i++) {
+        if(i<8){
         str += `${2**i} `;
+        }else{
+            str += `${2**i}`;
+        }
     }
     return str;
 }
@@ -57,7 +61,11 @@ let geometricalSequence = function(){
 let multiplesOfThree = () => {
     let str = "";
     for (let i = 1; i <= 5; i++) {
+        if(i<5){
         str += `${3*i} `;
+        }else{
+            str += `${3*i}`;
+        }
     }
     return str;
 }
@@ -94,5 +102,5 @@ let vowelCount = function(str){
 
 
 // DO NOT EDIT below this line - This will result in an automatic fail
-// module.exports = {nameOfCity, isDivisible, missingAngle, isRaining, geometricalSequence, multiplesOfThree, powerOf, vowelCount};
+module.exports = {nameOfCity, isDivisible, missingAngle, isRaining, geometricalSequence, multiplesOfThree, powerOf, vowelCount};
 
