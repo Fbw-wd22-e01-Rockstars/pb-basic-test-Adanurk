@@ -12,9 +12,7 @@
 //             expect(nameOfCity(input)).toBe(expected);
 //         });
 
-let nameOfCity = function(str){
-    return str.toLowerCase().startsWith("los") || str.toLowerCase().startsWith("new") ? "true" : "The city name does not begin with Los or New"
-}
+let nameOfCity = (str) => str.toLowerCase().startsWith("los") || str.toLowerCase().startsWith("new") ? "true" : "The city name does not begin with Los or New";
 
 console.log(nameOfCity("New York"));
 console.log(nameOfCity("los angeles"));
@@ -35,9 +33,7 @@ console.log(nameOfCity("newcastle"));
 //         });
 // });
 
-let isDivisible = function(num){
-    return num%100 === 0 ? true : false
-}
+let isDivisible = (num) => num%100 === 0 ? true : false;
 
 console.log(isDivisible(100));
 console.log(isDivisible(1000));
@@ -90,6 +86,85 @@ let isRaining = function(bool){
 }
 
 console.log(isRaining(false));
+
+//loops
+
+// test('return a geometrical sequence', () => {
+//     expect(geometricalSequence()).toBe("1 2 4 8 16 32 64 128 256");
+// })
+
+let geometricalSequence = function(){
+    for (let i = 0; i < 9; i++) {
+        console.log(2**i);
+    }
+}
+
+geometricalSequence();
+
+// test('returns first five multiples of three', () => {
+//     expect(multiplesOfThree()).toBe("3 6 9 12 15");
+// })
+
+let multiplesOfThree = () => {
+    for (let i = 1; i <= 5; i++) {
+        console.log(3*i);
+    }
+}
+
+multiplesOfThree();
+
+// describe('powerOf', () => {
+//     test.each`
+//     input| expected 
+//     ${3} | ${27}
+//     ${2} | ${4}
+//     ${4} | ${256}
+//     ${9} | ${387420489}
+//     `('$input to the power of $input should be $expected', ({input, expected}) => {
+//             expect(powerOf(input)).toBe(expected);
+//         });
+// });
+
+let powerOf = (num) => num**num;
+
+console.log(powerOf(3));
+console.log(powerOf(2));
+console.log(powerOf(4));
+console.log(powerOf(9));
+
+// describe('vowelCount', () => {
+//     test.each`
+//     input| expected 
+//     ${"aeiou"} | ${5}
+//     ${"AEIOU"} | ${5}
+//     ${"bhjpg"} | ${0}
+//     ${"hello"} | ${2}
+//     ${"initialization"} | ${8}
+//     `('$input has $expected vowels', ({input, expected}) => {
+//             expect(vowelCount(input)).toBe(expected);
+//         });
+// });
+
+let vowelCount = function(str){
+    let myArr = str.toLowerCase().split("");
+    let vowels = ["a", "e", "i", "o", "u"];
+    let counter = 0;
+    for (const chars of myArr) {
+        for (const item of vowels) {
+            if(chars === item){
+                counter += 1;
+            }
+        }
+    }
+    return counter;
+}
+
+console.log(vowelCount("aeiou"));
+console.log(vowelCount("AEIOU"));
+console.log(vowelCount("bhjpg"));
+console.log(vowelCount("hello"));
+console.log(vowelCount("initialization"));
+
 
 // DO NOT EDIT below this line - This will result in an automatic fail
 // module.exports = {nameOfCity, isDivisible, missingAngle, isRaining, geometricalSequence, multiplesOfThree, powerOf, vowelCount};
